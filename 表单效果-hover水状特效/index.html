@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单hover水状特效</title>
+    <link href="./index.css" rel="stylesheet" />
+    <script src="../jquery.js"></script>
+</head>
+<body>
+    <div class="contaner">
+        <h1>表单特效</h1>
+        <form action="">
+            <input class="tbx" type="text" placeholder="账号" />
+            <input class="tbx" type="password" placeholder="密码" />
+            <input class="sub" ype="submit" value="登录" />
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    const con = document.querySelector('.contaner');
+    let isIn = true;
+    let isOut = false;
+
+    var span;
+    con.addEventListener('mouseenter',(e)=>{
+        if(isIn){
+            let inx = e.clientX - e.target.offsetLeft;
+            let iny = e.clientY - e.target.offsetTop;
+            
+            let el = document.createElement('span');
+            el.style.left = inx + 'px';
+            el.style.top = iny + 'px';
+            con.appendChild(el);
+
+            $('.contaner span').removeClass('out');
+            $('.contaner span').addClass('in');
+            span = document.querySelector('.contaner span')
+            isIn = false;
+            isOut = true;
+        }
+    })
+    con.addEventListener('mouseleave',(e)=>{
+        if(isOut){
+            let inx = e.clientX - e.target.offsetLeft;
+            let iny = e.clientY - e.target.offsetTop;
+            $('.contaner span').removeClass('in');
+            $('.contaner span').addClass('out');
+            $('.out').css('left', inx + 'px');
+            $('.out').css('top', iny + 'px');
+            isIn = true;
+            isOut = false;
+            setTimeout(()=>{
+                con.removeChild(span);
+                isIn = true;
+            }, 500);
+        }
+    })
+</script>
+</html>

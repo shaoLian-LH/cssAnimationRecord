@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./table.PNG);
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#book{
+    position: relative;
+    top: 0;
+    width: 100px;
+    height: 145px;
+    background-color: #fff;
+    transform: rotate(-16.12deg) skewX(-3deg);
+    box-shadow: -18px 15px 5px rgba(0, 0, 0, 1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+#book:hover{
+    transform: rotate(-16.12deg) skewX(-3deg) translate(10px, -10px);
+    box-shadow: -18px 15px 5px rgba(0, 0, 0, 1);
+}
+#book:hover .cover{
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 1);
+    transition: 0.5s;
+}
+/* 书的侧页 */
+#book:before{
+    content: '';
+    width: 11px;
+    height: 100%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    right: 52px;
+    transform: skewY(-50deg) translate( -47.5px, -50.5px);
+}
+#book::after{
+    content: '';
+    width: 100%;
+    height: 13px;
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-39.5deg) translate( 5px, 12.5px);
+}
+#book h2{
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    font-size: 1em;
+    line-height: 1em;
+    /*color: #fff;*/
+}
+#book h2 span{
+    /* background-attachment: fixed;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+#book .writer{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #262626;
+    font-size: 0.6rem;
+    padding-top: 5px;
+    font-weight: 500;
+    border-top-left-radius: 1px solid #262626;
+}
+#book .writer i{
+    font-weight: 700;
+}
+/* 书的封面 */
+#book .cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    /* background: url(); */
+    background-size: cover;
+} 
