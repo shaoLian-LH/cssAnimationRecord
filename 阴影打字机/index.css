@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100vh;
+}
+body{
+    display: flex;
+    height: 100%;
+    background-color: #333;
+}
+#word{
+    margin: auto;
+    color: white;
+    margin-top: 330px;
+    font: 700 normal 3.5555em 'tahoma';
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324, 4px 8px #222324, 5px 10px #222324, 7px 12px #222324, 7px 14px #222324, 8px 15px #222324, 10px 20px #222324;
+}
